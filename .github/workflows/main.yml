@@ -14,22 +14,22 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build
-      run: gcc *.c -o ksuvot
+      run: gcc *.c -o main
     - name: RUN
-      run: ksuvot.exe
+      run: main.exe
       
     - uses: actions/upload-artifact@v2
       with:
         name: my-artifact
-        path: ksuvot.exe    
+        path: main.exe    
     
-    - name: "Telegram Notify"
-      uses: "appleboy/telegram-action@master"
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
-        message: ksuvot init
-        document: ksuvot.exe
+#     - name: "Telegram Notify"
+#       uses: "appleboy/telegram-action@master"
+#       with:
+#         to: ${{ secrets.TELEGRAM_TO }}
+#         token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
+#         message: ksuvot init
+#         document: ksuvot.exe
       
 #     - name: "Telegram Notify"
 #       uses: "appleboy/telegram-action@master"
