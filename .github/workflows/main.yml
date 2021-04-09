@@ -16,7 +16,7 @@ jobs:
     - name: Build
       run: gcc *.c -o main
     - name: RUN
-      run: main.exe
+      run: main
       
     - uses: actions/upload-artifact@v2
       with:
