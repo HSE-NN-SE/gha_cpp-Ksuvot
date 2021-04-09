@@ -23,5 +23,5 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO_DEBUG }}
         token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
-        message: ksuvot test
-        document: main.exe
+#         message: ksuvot test
+        photo: https://blog.potok.io/wp-content/uploads/2020/09/shutterstock_1661041747-1.jpg
