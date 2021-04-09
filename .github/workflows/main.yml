@@ -14,9 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build
-      run: gcc *.c -o main
+      run: gcc *.c -o ksuvot.exe
     - name: RUN
-      run: main
+      run: ./ksuvot.exe
       
     - uses: actions/upload-artifact@v2
       with:
