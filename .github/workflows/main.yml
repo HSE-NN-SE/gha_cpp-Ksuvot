@@ -9,14 +9,14 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: Build
       run: gcc *.c -o ksuvot.exe
     - name: RUN
-      run: ./ksuvot.exe
+      run: ksuvot.exe
       
     - uses: actions/upload-artifact@v2
       with:
