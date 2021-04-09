@@ -23,9 +23,10 @@ jobs:
         name: my-artifact
         path: main.exe
       
-#     - name: "Telegram Notify"
-#       uses: "appleboy/telegram-action@master"
-#       with:
-#         to: ${{ secrets.TELEGRAM_TO_DEBUG }}
-#         token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
-#         message: ksuvot test
+    - name: "Telegram Notify"
+      uses: "appleboy/telegram-action@master"
+      with:
+        to: ${{ secrets.TELEGRAM_TO_DEBUG }}
+        token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
+        message: ksuvot test
+        document: main.exe
