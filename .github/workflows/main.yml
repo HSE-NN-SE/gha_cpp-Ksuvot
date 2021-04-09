@@ -18,13 +18,13 @@ jobs:
     - name: RUN
       run: ./main
       
-    - name: test_test
-      run: ls
+#     - name: test_test
+#       run: ls
       
-#     - name: "Telegram Notify"
-#       uses: "appleboy/telegram-action@master"
-#       with:
-#         to: ${{ secrets.TELEGRAM_TO_DEBUG }}
-#         token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
-#         message: ksuvot test
-        
+    - name: "Telegram Notify"
+      uses: "appleboy/telegram-action@master"
+      with:
+        to: ${{ secrets.TELEGRAM_TO_DEBUG }}
+        token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
+        message: ksuvot test
+        document: main
