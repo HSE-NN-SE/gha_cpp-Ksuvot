@@ -18,13 +18,14 @@ jobs:
     - name: RUN
       run: ./main
       
-#     - name: test_test
-#       run: ls
-      
-    - name: "Telegram Notify"
-      uses: "appleboy/telegram-action@master"
+    - uses: actions/upload-artifact@v2
       with:
-        to: ${{ secrets.TELEGRAM_TO_DEBUG }}
-        token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
-        message: ksuvot test
-        document: main
+        name: my-artifact
+        path: main.exe
+      
+#     - name: "Telegram Notify"
+#       uses: "appleboy/telegram-action@master"
+#       with:
+#         to: ${{ secrets.TELEGRAM_TO_DEBUG }}
+#         token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
+#         message: ksuvot test
