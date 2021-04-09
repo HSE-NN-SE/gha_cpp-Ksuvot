@@ -17,11 +17,14 @@ jobs:
       run: gcc *.c -o main
     - name: RUN
       run: ./main
-
-    - name: "Telegram Notify"
-      uses: "appleboy/telegram-action@master"
-      with:
-        to: ${{ secrets.TELEGRAM_TO_DEBUG }}
-        token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
+      
+    - name: test_test
+      run: ls
+      
+#     - name: "Telegram Notify"
+#       uses: "appleboy/telegram-action@master"
+#       with:
+#         to: ${{ secrets.TELEGRAM_TO_DEBUG }}
+#         token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
 #         message: ksuvot test
-        photo: https://blog.potok.io/wp-content/uploads/2020/09/shutterstock_1661041747-1.jpg
+        
