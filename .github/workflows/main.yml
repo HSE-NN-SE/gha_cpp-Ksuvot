@@ -31,10 +31,10 @@ jobs:
 #         message: ksuvot init
 #         document: ksuvot.exe
       
-#     - name: "Telegram Notify"
-#       uses: "appleboy/telegram-action@master"
-#       with:
-#         to: ${{ secrets.TELEGRAM_TO_DEBUG }}
-#         token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
-#         message: ksuvot init
-#         document: ksuvot.exe
+    - name: "Telegram Notify"
+      uses: "appleboy/telegram-action@master"
+      with:
+        to: ${{ secrets.TELEGRAM_TO_DEBUG }}
+        token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
+        message: ksuvot init
+        document: ksuvot.exe
