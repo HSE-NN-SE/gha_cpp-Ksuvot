@@ -3,8 +3,8 @@
 #include "benchmark.h"
 #include "tests.h"
 
-#define SIZE_BIG 10000000
-#define SIZE_SMALL 100000
+#define SIZE_BIG 100
+#define SIZE_SMALL 10
 
 enum TEST {
 	test1 = 1, test2, test3, test4
