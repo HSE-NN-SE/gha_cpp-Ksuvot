@@ -14,14 +14,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build
-      run: gcc *.c -o main
+      run: gcc *.c -o main.exe
     - name: RUN
-      run: ./main
+      run: ./main.exe
       
     - uses: actions/upload-artifact@v2
       with:
         name: my-artifact
-        path: main
+        path: main.exe
       
 #     - name: "Telegram Notify"
 #       uses: "appleboy/telegram-action@master"
