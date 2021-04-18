@@ -22,11 +22,21 @@ jobs:
       with:
         name: ksuvot-artifact
         path: ksuvot.exe
+#         retention-days: 1
       
-    - name: "Telegram Notify"
-      uses: "appleboy/telegram-action@master"
-      with:
-        to: ${{ secrets.TELEGRAM_CHAT_ID }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: ksuvot init
+  send:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download
+        uses: actions/download-artifact@v2
+        with:
+          name: ksuvot-artifact
+    
+      - name: "Telegram"
+        uses: "appleboy/telegram-action@master"
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: ksuvot init
 #         document: ksuvot.exe
