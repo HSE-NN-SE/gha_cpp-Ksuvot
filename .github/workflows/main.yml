@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: C/C++ CI/CD
 
 on:
   push:
@@ -8,20 +8,13 @@ on:
 
 jobs:
   build:
-
     runs-on: windows-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Build
       run: gcc *.c -o ksuvot.exe
     - name: RUN
       run: ./ksuvot.exe
-      
-    - name: "Edit config"
-      run: git config --global user.email "ksuvot36@yandex.ru" && git config --global user.name "Ksuvot"
-    - name: "Version patch"
-      run: npm version 0.1.$GITHUB_RUN_ID
       
     - uses: actions/upload-artifact@v2
       with:
@@ -43,5 +36,5 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: New 0.1.${{ github.run_id }} version publish
+          message: New version publish
           document: ksuvot.exe
