@@ -21,12 +21,12 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: ksuvot-artifact
-        path: ksuvot.exe    
+        path: ksuvot.exe
       
-#     - name: "Telegram Notify"
-#       uses: "appleboy/telegram-action@master"
-#       with:
-#         to: ${{ secrets.TELEGRAM_TO_DEBUG }}
-#         token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
-#         message: ksuvot init
+    - name: "Telegram Notify"
+      uses: "appleboy/telegram-action@master"
+      with:
+        to: ${{ secrets.TELEGRAM_CHAT_ID }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        message: ksuvot init
 #         document: ksuvot.exe
