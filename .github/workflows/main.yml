@@ -22,7 +22,7 @@ jobs:
       with:
         name: ksuvot-artifact
         path: ksuvot.exe
-#         retention-days: 1
+        retention-days: 1
       
   send:
     needs: build
@@ -33,10 +33,13 @@ jobs:
         with:
           name: ksuvot-artifact
     
+      - name: "Version patch"
+        run: npm version 0.1.$GITHUB_RUN_ID
+    
       - name: "Telegram"
         uses: "appleboy/telegram-action@master"
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: ksuvot init
-#         document: ksuvot.exe
+          message: New 0.1.${{ github.run_id }} version publish
+          document: ksuvot.exe
